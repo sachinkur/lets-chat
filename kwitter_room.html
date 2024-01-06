@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Lets Chat | Room</title>
+        <h1>Lets chat</h1>
+        <sup>chat all around the world</sup><br>
+        <button class="logout_btn">Logout</button>
+
+        <hr>
+        <!-- <link href="kwitter_room.css" rel="stylesheet">
+        <script src="kwitter_room.js"></script> -->
+    </head>
+    <body>
+        <label style="font-size: large;">Welcome, <span class="greeting" id="greeting"></span></label><br><br>
+        <span style="display: flex;">
+            <button class="addroom" onclick="addroom()">Add room</button>
+            <input id="room_input">
+        </span><br>
+        <label style="color: black;">Trending rooms: </label>
+        <div id="div_thingy"></div>
+        <style>
+        .logout_btn{
+            transition: 0.2s;
+        }
+        .logout_btn:hover
+        {
+            background-color: rgb(96, 96, 239);
+            color: whitesmoke;
+            transform: translateX(-10%);
+        }       
+        .addroom{
+            transition: 0.2s;
+        }
+        .addroom:hover
+        {
+            background-color: rgb(96, 96, 239);
+            color: whitesmoke;
+            transform: translateX(10%);
+        }
+        #room_input{
+            transition: 0.2s;
+        }
+        #room_input:hover
+        {
+            background-color: rgb(96, 96, 239);
+            color: whitesmoke;
+            transform: translateX(5%);
+        }                                       
+        body{
+            background-color: lightblue;
+        }
+        #div_thingy
+        {
+            border:5px outset rgb(124, 123, 123);
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            width:130px;
+            height: 200px;
+            border-radius: 7px;
+            border-width: 3px;
+        }
+        sup{
+            /* font-size: larger; */
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h2
+        {
+            font-weight: bolder;
+            font-size: larger;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1
+        {
+            font-weight: lighter;
+            /* font-size: ; */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        /* body
+        {
+            background-color:rgb(25, 27, 28);
+        } */
+        button
+        {
+            border-radius: 5px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        input
+        {
+            border-radius: 5px;
+
+        }
+
+        </style>
+        <script>
+            welcome_user = localStorage.getItem("Username")
+            document.getElementById("greeting").innerHTML = welcome_user;
+
+            function addroom()
+            {
+                room_name = document.getElementById("room_input").value;
+                localStorage.setItem("Room Input", room_name);
+                firebase.database().ref("/").child(room_name).update({
+                     purpose: "adding the room name"
+                })
+            }
+        </script>
+    </body>
+</html>

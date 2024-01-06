@@ -1,0 +1,63 @@
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <title>Lets chat</title>
+        
+            <h1>Lets chat</h1>
+<br>            
+            
+        <sup>by sachin</sup>
+
+        <hr>
+    </head>
+    <body>
+        <h2>Login here:</h2>
+        <span style="display: inline-flexbox;">
+            <button onclick="login()" class="big">Login</button>
+            <input type="text" id="name_input" text="hello" style="width: 150px;" placeholder="">
+        </span>
+    </body>
+    <style>
+        body
+        {
+            background-color: lightblue;
+        }
+        sup{
+            font-size: larger;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+        h2
+        {
+            font-weight: bolder;
+            font-size: larger;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+        }
+        h1
+        {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        button
+        {
+            border-radius: 5px;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+        input
+        {
+            border-radius: 5px;
+
+        }
+
+    </style>
+    <script>
+        function login()
+        {
+            name = document.getElementById("name_input").value;
+            localStorage.setItem("Username", name);
+            window.location = "kwitter_room.html"
+        }
+    </script>
+</html>
